@@ -1,13 +1,13 @@
 {
   "main.css": "/mst-todo/static/css/main.a2ba7b1f.chunk.css",
-  "main.js": "/mst-todo/static/js/main.e8145950.chunk.js",
-  "main.js.map": "/mst-todo/static/js/main.e8145950.chunk.js.map",
+  "main.js": "/mst-todo/static/js/main.157de074.chunk.js",
+  "main.js.map": "/mst-todo/static/js/main.157de074.chunk.js.map",
   "runtime~main.js": "/mst-todo/static/js/runtime~main.b4b18eb2.js",
   "runtime~main.js.map": "/mst-todo/static/js/runtime~main.b4b18eb2.js.map",
   "static/js/2.3ef127be.chunk.js": "/mst-todo/static/js/2.3ef127be.chunk.js",
   "static/js/2.3ef127be.chunk.js.map": "/mst-todo/static/js/2.3ef127be.chunk.js.map",
   "index.html": "/mst-todo/index.html",
-  "precache-manifest.8dab8c954639c0199fd4ba9ca7a13f3a.js": "/mst-todo/precache-manifest.8dab8c954639c0199fd4ba9ca7a13f3a.js",
+  "precache-manifest.85d8ba01fce69a42983b9130d99ed9ea.js": "/mst-todo/precache-manifest.85d8ba01fce69a42983b9130d99ed9ea.js",
   "service-worker.js": "/mst-todo/service-worker.js",
   "static/css/main.a2ba7b1f.chunk.css.map": "/mst-todo/static/css/main.a2ba7b1f.chunk.css.map"
 }
