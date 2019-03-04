@@ -29,15 +29,18 @@ class Form extends Component {
   };
 
   addTodo = event => {
+    event.preventDefault();
     const {
       store: { addTodo, usersIds }
     } = this.props;
     const { inputText } = this.state;
-
     // get random user's ID
     const assignee = usersIds[Math.floor(Math.random() * usersIds.length)];
 
-    event.preventDefault();
+    if (!inputText) {
+      return;
+    }
+
     addTodo(inputText, assignee);
     this.setState({
       inputText: ''
@@ -45,12 +48,16 @@ class Form extends Component {
   };
 
   addUser = event => {
+    event.preventDefault();
     const {
       store: { addUser }
     } = this.props;
     const { userName } = this.state;
 
-    event.preventDefault();
+    if (!userName) {
+      return;
+    }
+
     addUser(userName);
     this.setState({
       userName: ''
