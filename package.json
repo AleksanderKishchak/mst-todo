@@ -1,17 +1,25 @@
 {
   "name": "mst-todo",
   "version": "0.1.0",
+  "homepage": "https://AleksanderKishchak.github.io/mst-todo",
   "private": true,
   "dependencies": {
+    "classnames": "^2.2.6",
+    "mobx": "^5.9.0",
+    "mobx-react": "^5.4.3",
+    "mobx-state-tree": "^3.10.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
+    "react-scripts": "2.1.5",
+    "uniqid": "^5.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -21,5 +29,13 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "eslint": "^5.15.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "gh-pages": "^2.0.1"
+  }
 }

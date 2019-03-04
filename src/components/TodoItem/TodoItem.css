@@ -1,0 +1,53 @@
+.todoItem {
+  padding: 10px 20px;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(212, 202, 202);
+  position: relative;
+}
+
+.todoItem label.active::after {
+  content: '';
+  height: 1px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+}
+
+.todoItem input[type='checkbox'] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid blue;
+  border-radius: 4px;
+  outline: none;
+}
+
+.todoItem span {
+  flex-basis: 30%;
+  text-align: left;
+}
+
+.todoItem input[type='checkbox']:checked {
+  background-color: blue;
+}
+
+.todoItem input[type='checkbox'] + span {
+  height: 1px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+.todoItem input[type='checkbox']:checked + span {
+  background-color: black;
+}
+
+.todoItem input[type='checkbox']:focus,
+.todoItem input[type='checkbox']:hover {
+  box-shadow: 0 0 0 3px orangered;
+  cursor: pointer;
+}
