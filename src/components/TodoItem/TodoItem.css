@@ -3,18 +3,14 @@
   font-size: 18px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid rgb(212, 202, 202);
   position: relative;
 }
 
-.todoItem label.active::after {
-  content: '';
-  height: 1px;
-  background-color: black;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
+.todoItem label {
+  flex-basis: 100px;
+  text-align: left;
 }
 
 .todoItem input[type='checkbox'] {
@@ -24,6 +20,8 @@
   border: 2px solid blue;
   border-radius: 4px;
   outline: none;
+  vertical-align: middle;
+  margin-right: 10px;
 }
 
 .todoItem span {
@@ -35,19 +33,17 @@
   background-color: blue;
 }
 
-.todoItem input[type='checkbox'] + span {
-  height: 1px;
-  position: absolute;
-  left: 0;
-  top: 50%;
-}
-
-.todoItem input[type='checkbox']:checked + span {
-  background-color: black;
-}
-
 .todoItem input[type='checkbox']:focus,
 .todoItem input[type='checkbox']:hover {
-  box-shadow: 0 0 0 3px orangered;
+  box-shadow: 0 0 0 3px rgb(121, 109, 231);
   cursor: pointer;
+}
+
+.todoItem button {
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 15px;
 }

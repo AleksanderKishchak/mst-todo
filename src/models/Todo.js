@@ -5,17 +5,17 @@ import User from './User';
 const Todo = types
   .model({
     id: types.identifier,
-    name: types.string,
-    done: false,
-    assignee: types.maybe(types.reference(User))
+    title: types.string,
+    completed: false,
+    userId: types.maybe(types.reference(User))
   })
   .actions(self => ({
     toggle() {
-      self.done = !self.done;
+      self.completed = !self.completed;
     },
 
-    setName(name) {
-      self.name = name;
+    setTitle(title) {
+      self.title = title;
     }
   }));
 

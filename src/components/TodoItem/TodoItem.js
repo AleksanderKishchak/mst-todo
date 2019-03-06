@@ -1,49 +1,55 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import { observer } from 'mobx-react';
 
 import './TodoItem.css';
 
-export default class TodoItem extends Component {
-  static propTypes = {
-    todo: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      done: PropTypes.bool.isRequired
-    }).isRequired,
-    onDelete: PropTypes.func.isRequired
-  };
+const TodoItem = observer(
+  class extends Component {
+    static propTypes = {
+      todo: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        completed: PropTypes.bool.isRequired
+      }).isRequired
+    };
 
-  onToggle = () => {
-    const { todo } = this.props;
+    onToggle = () => {
+      const { todo } = this.props;
 
-    todo.toggle();
-  };
+      todo.toggle();
+    };
 
-  onChangeName = () => {
-    const newName = prompt('Enter new task', 'drink coffee');
-    const { todo } = this.props;
+    onChangeName = () => {
+      const newTitle = prompt('Enter new task', 'drink coffee');
+      const { todo } = this.props;
 
-    if (newName) {
-      todo.setName(newName);
+      if (newTitle) {
+        todo.setTitle(newTitle);
+      }
+    };
+
+    render() {
+      const { todo } = this.props;
+
+      return (
+        <li className="todoItem">
+          <span>{todo.title}</span>
+          {todo.userId.name ? <span>assignee: {todo.userId.name}</span> : null}
+
+          <label>
+            <input type="checkbox" checked={todo.completed} onChange={todo.toggle} />
+            <span>{todo.completed ? 'Done!' : ''}</span>
+          </label>
+
+          <button className="button" type="button" onClick={this.onChangeName}>
+            Edit
+          </button>
+        </li>
+      );
     }
-  };
-
-  render() {
-    const { todo, onDelete } = this.props;
-
-    console.log(onDelete);
-
-    return (
-      <li className="todoItem" onDoubleClick={this.onChangeName}>
-        <span>{todo.name}</span>
-        <span>assignee: {todo.assignee.name}</span>
-        <label className={classNames({ active: todo.done })}>
-          <input type="checkbox" checked={todo.done} onChange={todo.toggle} />
-        </label>
-        <button className="button" type="button" onClick={onDelete}>
-          Delete
-        </button>
-      </li>
-    );
   }
-}
+);
+
+TodoItem.displayName = 'TodoItem';
+
+export default TodoItem;
